@@ -9,11 +9,11 @@ public class gra {
     //private-dostępne tylko w klasie
     //protected-w klasie i klasach potomnych oraz w pakiecie
     //używanie private to hermetyzacja
-    private Set<Integer> wylosowaneLiczby = new HashSet<>();
+    private static Set<Integer> wylosowaneLiczby = new HashSet<>();
     private List<Integer> wpisaneLiczby = new ArrayList<>();
     private List<Integer> trafioneLiczby = new LinkedList<>();
 
-    private void wylosowanieLiczb(int n) {
+    private static void wylosowanieLiczb(int n) {
 
         while (wylosowaneLiczby.size() < 6) {
             wylosowaneLiczby.add((int) (Math.random() * 100 + 1));
@@ -24,7 +24,7 @@ public class gra {
     private void wpisanieLiczb(int n) {
         Scanner klawiatura = new Scanner(System.in);
 
-        System.out.println("podaj 6 liczb");
+        System.out.println("podaj n liczb");
 
 
         while (wpisaneLiczby.size() < n) {
@@ -53,12 +53,14 @@ public class gra {
     }
 
     public void zagraj(int liczbaWpisanych) {
-        wylosowanieLiczb(liczbaWpisanych);
+
+        wylosowanieLiczb(6);
         wpisanieLiczb(liczbaWpisanych);
         podsumowanie();
         System.out.println("wylosowano" + wylosowaneLiczby);
         System.out.println("wpisano" + wpisaneLiczby);
         System.out.println("trafiono" + trafioneLiczby);
+
 
     }
 }
