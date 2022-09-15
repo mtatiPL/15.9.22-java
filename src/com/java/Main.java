@@ -12,6 +12,8 @@ public class Main {
         wylosowaneLiczby = wylosowanieLiczb(6);
         wpisaneLiczby = wpisanieLiczb(10);
         trafioneLiczby = podsumowanie(wpisaneLiczby, wylosowaneLiczby);
+        Collections.sort(wpisaneLiczby);
+        System.out.println("wpisano:" + wpisaneLiczby);
         System.out.println("wylosowano" + wylosowaneLiczby);
         System.out.println("trafiono" + trafioneLiczby);
 
