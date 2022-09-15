@@ -21,7 +21,7 @@ public class Main {
         //gdy używamy for ale są powtórzenia to będzie mniej niż 6 a używając while będzie się wykonywać tak długo aż będzie 6 różnych liczb
 
         while (wylosowane.size() < 6) {
-            wylosowane.add((int) (Math.random() * 10 + 1));
+            wylosowane.add((int) (Math.random() * 100 + 1));
         }
         for (int element : wylosowane) {
             System.out.print(element + ", ");
@@ -46,6 +46,16 @@ public class Main {
             wpisane.add(liczba);
         }
         System.out.print(wpisane);
+        //sprawdzamy czy wpisane zostały wylosowane
+        List<Integer> trafione = new LinkedList<>();
+        //jeżeli wartośc wpisana została wylosowana to dodajemy ją do trafione
+        for (Integer wpisanaWartosc : wpisane) {
+            if (wylosowane.contains(wpisanaWartosc)) {
+                trafione.add(wpisanaWartosc);
+            }
+
+        }
+        System.out.println(trafione);
 
     }
 }
