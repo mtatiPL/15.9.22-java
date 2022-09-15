@@ -7,10 +7,11 @@ public class Main {
 
         System.out.println("witaj na losowaniu 6 liczb");
         gra gra1 = new gra();
-        gra1.wpisanieLiczb(8);
-        gra1.wylosowanieLiczb(6);
-        gra1.podsumowanie();
-        System.out.println(gra1.trafioneLiczby);
+
+        gra1.zagraj(4);
+        gra1.zagraj(10);
+        gra gra2 = new gra();
+        gra2.zagraj(3);
     }
 }
 

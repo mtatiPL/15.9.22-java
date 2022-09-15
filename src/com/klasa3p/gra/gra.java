@@ -11,9 +11,9 @@ public class gra {
     //używanie private to hermetyzacja
     private Set<Integer> wylosowaneLiczby = new HashSet<>();
     private List<Integer> wpisaneLiczby = new ArrayList<>();
-    public List<Integer> trafioneLiczby = new LinkedList<>();
+    private List<Integer> trafioneLiczby = new LinkedList<>();
 
-    public void wylosowanieLiczb(int n) {
+    private void wylosowanieLiczb(int n) {
 
         while (wylosowaneLiczby.size() < 6) {
             wylosowaneLiczby.add((int) (Math.random() * 100 + 1));
@@ -21,7 +21,7 @@ public class gra {
 
     }
 
-    public void wpisanieLiczb(int n) {
+    private void wpisanieLiczb(int n) {
         Scanner klawiatura = new Scanner(System.in);
 
         System.out.println("podaj 6 liczb");
@@ -39,7 +39,7 @@ public class gra {
 
     }
 
-    public void podsumowanie() {
+    private void podsumowanie() {
 
         //jeżeli wartośc wpisana została wylosowana to dodajemy ją do trafione
         for (Integer wpisanaWartosc : wpisaneLiczby) {
@@ -49,6 +49,16 @@ public class gra {
 
 
         }
+
+    }
+
+    public void zagraj(int liczbaWpisanych) {
+        wylosowanieLiczb(liczbaWpisanych);
+        wpisanieLiczb(liczbaWpisanych);
+        podsumowanie();
+        System.out.println("wylosowano" + wylosowaneLiczby);
+        System.out.println("wpisano" + wpisaneLiczby);
+        System.out.println("trafiono" + trafioneLiczby);
 
     }
 }
