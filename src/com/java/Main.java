@@ -1,7 +1,6 @@
 package com.java;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,7 +26,20 @@ public class Main {
         for (int element : wylosowane) {
             System.out.print(element + ", ");
         }
-
+        System.out.println("wylosowanie inaczej");
+        System.out.println(wylosowane);
+//wpisujemy 6 liczb z klawiatury
+        //na razie dowolnie potem bez powtórzeń
+        //dodajemy elementy na końcu listy
+        Scanner klawiatura = new Scanner(System.in);
+        //lista to kolekcja wktórej można zmieniać rozmiar działania programu
+        //elementy indeksowane mogą sie powtarzać
+        System.out.println("podaj 6 liczb");
+        List<Integer> wpisane = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            wpisane.add(klawiatura.nextInt());
+        }
+        System.out.print(wpisane);
 
     }
 }
